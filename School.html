@@ -79,6 +79,7 @@
     <!-- =================================--------- -->
     <!-- AUTH VIEW: LOGIN / REGISTER / RESET CARD   -->
     <!-- =================================--------- -->
+    <!-- Decorative Background Wave (Only visible in Auth View) -->
     <div id="auth-bg-wave" class="absolute inset-0 opacity-30 pointer-events-none overflow-hidden z-0">
         <svg class="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" preserveAspectRatio="none">
             <path d="M0,224 L120,208 C240,192,480,160,720,176 C960,192,1200,256,1320,288 L1440,320 L1440,800 L1320,800 C1200,800,960,800,720,800 C480,800,240,800,120,800 L0,800 Z" fill="#c084fc" opacity="0.2"></path>
@@ -414,17 +415,16 @@
             </div>
 
             <!-- Navigation Menu Links -->
-            <nav class="flex items-center gap-4 md:gap-8">
+            <nav class="flex items-center gap-6 md:gap-8">
                 <button onclick="switchHomeTab('home')" id="nav-home" class="nav-link text-xs md:text-sm font-semibold text-neutral-300 hover:text-white transition-colors duration-200 focus:outline-none active">Home</button>
                 <button onclick="switchHomeTab('teachers')" id="nav-teachers" class="nav-link text-xs md:text-sm font-semibold text-neutral-300 hover:text-white transition-colors duration-200 focus:outline-none">Teachers</button>
                 <button onclick="switchHomeTab('students')" id="nav-students" class="nav-link text-xs md:text-sm font-semibold text-neutral-300 hover:text-white transition-colors duration-200 focus:outline-none">Students Details</button>
                 <button onclick="switchHomeTab('services')" id="nav-services" class="nav-link text-xs md:text-sm font-semibold text-neutral-300 hover:text-white transition-colors duration-200 focus:outline-none">Service</button>
                 <button onclick="switchHomeTab('about')" id="nav-about" class="nav-link text-xs md:text-sm font-semibold text-neutral-300 hover:text-white transition-colors duration-200 focus:outline-none">About</button>
-                <!-- Secret Admin Tab Link (Revealed only to admin login) -->
-                <button onclick="switchHomeTab('admin')" id="nav-admin" class="nav-link text-xs md:text-sm font-semibold text-amber-400 hover:text-amber-300 transition-colors duration-200 focus:outline-none hidden">Admin Panel</button>
             </nav>
 
             <div class="flex items-center gap-3">
+                <!-- Real Logout Action -->
                 <button onclick="handleUserLogout()" class="flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 border border-neutral-800 hover:border-rose-500/30 hover:bg-rose-500/10 text-neutral-300 hover:text-rose-400 rounded-xl text-xs font-semibold transition-all duration-300">
                     <i class="ri-logout-box-r-line"></i>
                     <span class="hidden md:inline">Log Out</span>
@@ -452,14 +452,14 @@
                     <div class="p-5 bg-[#121214] border border-neutral-800/80 rounded-2xl flex flex-col justify-between">
                         <span class="w-8 h-8 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center text-lg"><i class="ri-team-line"></i></span>
                         <div class="mt-4">
-                            <p class="text-2xl font-bold text-white" id="stat-teachers-count">0</p>
+                            <p class="text-2xl font-bold text-white">42</p>
                             <p class="text-[10px] text-neutral-500 uppercase font-semibold">Total Faculty</p>
                         </div>
                     </div>
                     <div class="p-5 bg-[#121214] border border-neutral-800/80 rounded-2xl flex flex-col justify-between">
                         <span class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg"><i class="ri-contacts-line"></i></span>
                         <div class="mt-4">
-                            <p class="text-2xl font-bold text-white" id="stat-students-count">0</p>
+                            <p class="text-2xl font-bold text-white">1,248</p>
                             <p class="text-[10px] text-neutral-500 uppercase font-semibold">Students Enrolled</p>
                         </div>
                     </div>
@@ -487,8 +487,34 @@
                     <p class="text-xs text-neutral-500">Profiles of senior academic instructors and administrators.</p>
                 </div>
 
-                <div id="teachers-public-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    <!-- Dynamic teacher cards rendered here -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- Teacher Card 1 -->
+                    <div class="p-5 bg-[#121214] border border-neutral-800/80 rounded-2xl flex items-center gap-4 hover:border-violet-500/30 transition-colors duration-300">
+                        <div class="w-12 h-12 rounded-full bg-violet-600/10 text-violet-400 flex items-center justify-center font-bold text-lg border border-violet-500/20">DK</div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-white">Dr. Devendra Kumar</h4>
+                            <p class="text-[10px] text-violet-400 font-medium">Head of Physics Department</p>
+                            <p class="text-[9px] text-neutral-500 mt-1">Ph.D. in Astrophysics, BHU</p>
+                        </div>
+                    </div>
+                    <!-- Teacher Card 2 -->
+                    <div class="p-5 bg-[#121214] border border-neutral-800/80 rounded-2xl flex items-center gap-4 hover:border-violet-500/30 transition-colors duration-300">
+                        <div class="w-12 h-12 rounded-full bg-blue-600/10 text-blue-400 flex items-center justify-center font-bold text-lg border border-blue-500/20">SR</div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-white">Mrs. Shobha Roy</h4>
+                            <p class="text-[10px] text-blue-400 font-medium">Senior Mathematics Faculty</p>
+                            <p class="text-[9px] text-neutral-500 mt-1">M.Sc. in Applied Math BHU</p>
+                        </div>
+                    </div>
+                    <!-- Teacher Card 3 -->
+                    <div class="p-5 bg-[#121214] border border-neutral-800/80 rounded-2xl flex items-center gap-4 hover:border-violet-500/30 transition-colors duration-300">
+                        <div class="w-12 h-12 rounded-full bg-emerald-600/10 text-emerald-400 flex items-center justify-center font-bold text-lg border border-emerald-500/20">AS</div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-white">Mr. Anoop Shukla</h4>
+                            <p class="text-[10px] text-emerald-400 font-medium">Computer Science Instructor</p>
+                            <p class="text-[9px] text-neutral-500 mt-1">B.Tech, M.Tech in CS</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -511,8 +537,28 @@
                                     <th class="py-3.5 px-5">Status</th>
                                 </tr>
                             </thead>
-                            <tbody id="students-public-table" class="divide-y divide-neutral-800/60 text-neutral-300">
-                                <!-- Dynamic student table rows rendered here -->
+                            <tbody class="divide-y divide-neutral-800/60 text-neutral-300">
+                                <tr class="hover:bg-neutral-900/30">
+                                    <td class="py-3.5 px-5 font-semibold text-neutral-400">#SV-8422</td>
+                                    <td class="py-3.5 px-5 font-bold text-white">Anuj Pratap Singh</td>
+                                    <td class="py-3.5 px-5">Class XII - Section A</td>
+                                    <td class="py-3.5 px-5 font-medium">1022</td>
+                                    <td class="py-3.5 px-5"><span class="px-2 py-0.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-full text-[9px] font-semibold">Active</span></td>
+                                </tr>
+                                <tr class="hover:bg-neutral-900/30">
+                                    <td class="py-3.5 px-5 font-semibold text-neutral-400">#SV-9201</td>
+                                    <td class="py-3.5 px-5 font-bold text-white">Prachi Mishra</td>
+                                    <td class="py-3.5 px-5">Class XI - Section C</td>
+                                    <td class="py-3.5 px-5 font-medium">2108</td>
+                                    <td class="py-3.5 px-5"><span class="px-2 py-0.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-full text-[9px] font-semibold">Active</span></td>
+                                </tr>
+                                <tr class="hover:bg-neutral-900/30">
+                                    <td class="py-3.5 px-5 font-semibold text-neutral-400">#SV-7338</td>
+                                    <td class="py-3.5 px-5 font-bold text-white">Shabda Singh</td>
+                                    <td class="py-3.5 px-5">Class XII - Section B</td>
+                                    <td class="py-3.5 px-5 font-medium">1244</td>
+                                    <td class="py-3.5 px-5"><span class="px-2 py-0.5 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-full text-[9px] font-semibold">Pending</span></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -531,14 +577,14 @@
                         <span class="w-10 h-10 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center text-xl shrink-0"><i class="ri-computer-line"></i></span>
                         <div class="space-y-1">
                             <h4 class="text-sm font-semibold text-white">Smart Classroom Portals</h4>
-                            <p class="text-[11px] text-neutral-400 leading-relaxed">Interactive live whiteboard integration, syllabus storage, and daily assignment directories.</p>
+                            <p class="text-[11px] text-neutral-400 leading-relaxed">Interactive live whiteboard integration, dynamic syllabus storage, and daily assignment submission directories.</p>
                         </div>
                     </div>
                     <div class="p-5 bg-[#121214] border border-neutral-800/80 rounded-2xl flex gap-4">
                         <span class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl shrink-0"><i class="ri-shield-user-line"></i></span>
                         <div class="space-y-1">
                             <h4 class="text-sm font-semibold text-white">Biometric Attendance Logs</h4>
-                            <p class="text-[11px] text-neutral-400 leading-relaxed">Secured biometric logging for students, and monthly presence metrics saved directly to profiles.</p>
+                            <p class="text-[11px] text-neutral-400 leading-relaxed">Secured biometric logging for students, and auto-generated monthly presence metrics saved directly to profiles.</p>
                         </div>
                     </div>
                 </div>
@@ -561,98 +607,6 @@
                         <div>
                             <p class="text-neutral-500 uppercase tracking-widest text-[9px] font-bold">Affiliation</p>
                             <p class="font-semibold text-white mt-1">Central Board of Secondary Education (CBSE)</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 6. SECRET ADMIN PANEL SECTION -->
-            <section id="tab-section-admin" class="home-section space-y-8 hidden opacity-0 translate-y-8">
-                <div>
-                    <h2 class="text-xl font-bold text-amber-400 flex items-center gap-2">
-                        <i class="ri-admin-line"></i>
-                        <span>Administrative Control Center</span>
-                    </h2>
-                    <p class="text-xs text-neutral-500">Database management interface for Teachers and Students lists [2].</p>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- A. TEACHER CRUD CARD -->
-                    <div class="p-6 bg-[#121214] border border-neutral-800 rounded-2xl space-y-6">
-                        <h3 class="text-sm font-bold text-white uppercase tracking-wider border-b border-neutral-800/80 pb-3 flex items-center justify-between">
-                            <span>Manage Faculty Portfolios</span>
-                            <span id="teacher-form-mode" class="text-[10px] text-violet-400 lowercase font-medium bg-violet-500/10 px-2 py-0.5 rounded-full border border-violet-500/20">mode: Add New</span>
-                        </h3>
-                        <!-- Form to Add/Edit Teacher -->
-                        <form id="admin-teacher-form" class="space-y-3" onsubmit="handleTeacherFormSubmit(event)">
-                            <input type="hidden" id="admin-teacher-id">
-                            <div class="input-field flex items-center gap-3 bg-[#18181b] border border-neutral-800 rounded-2xl px-4 py-2.5 transition-all duration-300">
-                                <i class="ri-user-star-line text-neutral-500 text-base"></i>
-                                <input id="admin-teacher-name" type="text" placeholder="Teacher Name (e.g., Dr. Devendra Kumar)" class="bg-transparent w-full outline-none text-xs text-white placeholder-neutral-500" required>
-                            </div>
-                            <div class="input-field flex items-center gap-3 bg-[#18181b] border border-neutral-800 rounded-2xl px-4 py-2.5 transition-all duration-300">
-                                <i class="ri-book-3-line text-neutral-500 text-base"></i>
-                                <input id="admin-teacher-subject" type="text" placeholder="Department / Subject Role" class="bg-transparent w-full outline-none text-xs text-white placeholder-neutral-500" required>
-                            </div>
-                            <div class="input-field flex items-center gap-3 bg-[#18181b] border border-neutral-800 rounded-2xl px-4 py-2.5 transition-all duration-300">
-                                <i class="ri-award-line text-neutral-500 text-base"></i>
-                                <input id="admin-teacher-qual" type="text" placeholder="Qualification (e.g., Ph.D. in CS, BHU)" class="bg-transparent w-full outline-none text-xs text-white placeholder-neutral-500" required>
-                            </div>
-                            <div class="input-field flex items-center gap-3 bg-[#18181b] border border-neutral-800 rounded-2xl px-4 py-2.5 transition-all duration-300">
-                                <i class="ri-image-line text-neutral-500 text-base"></i>
-                                <input id="admin-teacher-photo" type="url" placeholder="Teacher Photo URL (Optional - leave empty for auto letter-avatar)" class="bg-transparent w-full outline-none text-xs text-white placeholder-neutral-500">
-                            </div>
-
-                            <div class="flex gap-3">
-                                <button type="submit" id="admin-teacher-submit-btn" class="w-2/3 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-2xl font-bold text-xs transition-all duration-300">Save Teacher Portfolio</button>
-                                <button type="button" onclick="resetTeacherForm()" class="w-1/3 py-3 bg-neutral-900 border border-neutral-800 hover:bg-neutral-800 text-neutral-400 rounded-2xl font-bold text-xs transition-all duration-300">Cancel</button>
-                            </div>
-                        </form>
-
-                        <!-- Teachers List with Edit/Delete Controls [2] -->
-                        <div class="space-y-2 mt-4 max-h-[220px] overflow-y-auto no-scrollbar pr-1">
-                            <h4 class="text-xs font-semibold text-neutral-400">Current Faculty List</h4>
-                            <div id="admin-teachers-list" class="space-y-2">
-                                <!-- Dynamic list inside admin controls -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- B. STUDENT CRUD CARD -->
-                    <div class="p-6 bg-[#121214] border border-neutral-800 rounded-2xl space-y-6">
-                        <h3 class="text-sm font-bold text-white uppercase tracking-wider border-b border-neutral-800/80 pb-3 flex items-center justify-between">
-                            <span>Manage Student Enrollments</span>
-                        </h3>
-                        <!-- Form to Add Student -->
-                        <form id="admin-student-form" class="space-y-3" onsubmit="handleStudentFormSubmit(event)">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <div class="input-field flex items-center gap-2 bg-[#18181b] border border-neutral-800 rounded-2xl px-3 py-2.5 transition-all duration-300">
-                                    <i class="ri-key-line text-neutral-500 text-base"></i>
-                                    <input id="admin-student-reg" type="text" placeholder="Reg ID (e.g. SV-9011)" class="bg-transparent w-full outline-none text-xs text-white placeholder-neutral-500" required>
-                                </div>
-                                <div class="input-field flex items-center gap-2 bg-[#18181b] border border-neutral-800 rounded-2xl px-3 py-2.5 transition-all duration-300">
-                                    <i class="ri-id-card-line text-neutral-500 text-base"></i>
-                                    <input id="admin-student-roll" type="text" placeholder="Roll No" class="bg-transparent w-full outline-none text-xs text-white placeholder-neutral-500" required>
-                                </div>
-                            </div>
-                            <div class="input-field flex items-center gap-3 bg-[#18181b] border border-neutral-800 rounded-2xl px-4 py-2.5 transition-all duration-300">
-                                <i class="ri-user-line text-neutral-500 text-base"></i>
-                                <input id="admin-student-name" type="text" placeholder="Student Full Name" class="bg-transparent w-full outline-none text-xs text-white placeholder-neutral-500" required>
-                            </div>
-                            <div class="input-field flex items-center gap-3 bg-[#18181b] border border-neutral-800 rounded-2xl px-4 py-2.5 transition-all duration-300">
-                                <i class="ri-slideshow-3-line text-neutral-500 text-base"></i>
-                                <input id="admin-student-class" type="text" placeholder="Class & Section (e.g., Class XII - Section A)" class="bg-transparent w-full outline-none text-xs text-white placeholder-neutral-500" required>
-                            </div>
-
-                            <button type="submit" class="w-full py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-2xl font-bold text-xs transition-all duration-300">Enroll New Student</button>
-                        </form>
-
-                        <!-- Students List with Delete Controls [2] -->
-                        <div class="space-y-2 mt-4 max-h-[220px] overflow-y-auto no-scrollbar pr-1">
-                            <h4 class="text-xs font-semibold text-neutral-400">Current Student Directory</h4>
-                            <div id="admin-students-list" class="space-y-2">
-                                <!-- Dynamic student list inside admin controls -->
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -717,17 +671,13 @@
 
     <!-- API Core Interfacing Javascript -->
     <script>
-        // API Base URL (पोर्ट 5000 पर आपका Node.js एक्सप्रेस बैकएंड सर्वर)
+        // API Base URL (Express Server on Local Network or Localhost)
         const API_URL = "http://localhost:5000/api";
 
-        // स्टेट ट्रैकर (वेरिफिकेशन स्थिति)
+        // Global State variables
         let isPhoneVerified = false;
         let isForgotPhoneVerified = false;
-        let loggedInUser = null; // वर्तमान सक्रिय सत्र
-
-        // डायनामिक डेटाबेस सूचियां
-        let dbTeachers = [];
-        let dbStudents = [];
+        let loggedInUser = null; // Holds the current session details
 
         // ----------------------------------------------------
         // १. ऑटोमैटिक लोकल सिम्युलेटर फ़ॉलबैक (Network Error Interceptor)
@@ -771,15 +721,16 @@
                 return { ok: true, status: 201, data: { message: "Simulated signup complete!" }, fallback: true };
             }
             if (path === '/login') {
+                // Return a beautifully simulated mock account based on whatever they type
                 const usernamePart = body.email.split('@')[0];
                 return { 
                     ok: true, 
                     status: 200, 
                     data: { 
                         user: { 
-                            fullName: body.email === "admin12@gmail.com" ? "Portal Administrator" : (usernamePart.charAt(0).toUpperCase() + usernamePart.slice(1)), 
+                            fullName: usernamePart.charAt(0).toUpperCase() + usernamePart.slice(1), 
                             email: body.email,
-                            username: body.email === "admin12@gmail.com" ? "admin_portal" : `@${usernamePart}_870`,
+                            username: `@${usernamePart}_870`,
                             mobile: "+917905647338"
                         } 
                     }, 
@@ -788,59 +739,6 @@
             }
             if (path === '/reset-password') {
                 return { ok: true, status: 200, data: { message: "Simulated password reset complete!" }, fallback: true };
-            }
-            // Teachers List Mocking
-            if (path === '/teachers') {
-                if (options && options.method === 'POST') {
-                    const mockTeacher = { _id: "mock_" + Date.now(), name: body.name, subject: body.subject, qualification: body.qualification, photoUrl: body.photoUrl, avatarLetter: body.name.trim().charAt(0).toUpperCase() };
-                    dbTeachers.push(mockTeacher);
-                    return { ok: true, status: 201, data: mockTeacher, fallback: true };
-                }
-                if (dbTeachers.length === 0) {
-                    dbTeachers = [
-                        { _id: "t1", name: "Dr. Devendra Kumar", subject: "Head of Physics Department", qualification: "Ph.D. in Astrophysics, BHU", avatarLetter: "DK", photoUrl: "" },
-                        { _id: "t2", name: "Mrs. Shobha Roy", subject: "Senior Mathematics Faculty", qualification: "M.Sc. in Applied Math BHU", avatarLetter: "SR", photoUrl: "" },
-                        { _id: "t3", name: "Mr. Anoop Shukla", subject: "Computer Science Instructor", qualification: "B.Tech, M.Tech in CS", avatarLetter: "AS", photoUrl: "" }
-                    ];
-                }
-                return { ok: true, status: 200, data: dbTeachers, fallback: true };
-            }
-            if (path.startsWith('/teachers/')) {
-                const id = path.split('/')[2];
-                if (options && options.method === 'PUT') {
-                    const index = dbTeachers.findIndex(t => t._id === id);
-                    if (index !== -1) {
-                        dbTeachers[index] = { _id: id, name: body.name, subject: body.subject, qualification: body.qualification, photoUrl: body.photoUrl, avatarLetter: body.name.trim().charAt(0).toUpperCase() };
-                        return { ok: true, status: 200, data: dbTeachers[index], fallback: true };
-                    }
-                }
-                if (options && options.method === 'DELETE') {
-                    dbTeachers = dbTeachers.filter(t => t._id !== id);
-                    return { ok: true, status: 200, data: { message: "Deleted" }, fallback: true };
-                }
-            }
-            // Students List Mocking
-            if (path === '/students') {
-                if (options && options.method === 'POST') {
-                    const mockStudent = { _id: "mock_" + Date.now(), regId: body.regId, fullName: body.fullName, classSection: body.classSection, rollNo: body.rollNo, status: "Active" };
-                    dbStudents.push(mockStudent);
-                    return { ok: true, status: 201, data: mockStudent, fallback: true };
-                }
-                if (dbStudents.length === 0) {
-                    dbStudents = [
-                        { _id: "s1", regId: "SV-8422", fullName: "Anuj Pratap Singh", classSection: "Class XII - Section A", rollNo: "1022", status: "Active" },
-                        { _id: "s2", regId: "SV-9201", fullName: "Prachi Mishra", classSection: "Class XI - Section C", rollNo: "2108", status: "Active" },
-                        { _id: "s3", regId: "SV-7338", fullName: "Shabda Singh", classSection: "Class XII - Section B", rollNo: "1244", status: "Pending" }
-                    ];
-                }
-                return { ok: true, status: 200, data: dbStudents, fallback: true };
-            }
-            if (path.startsWith('/students/')) {
-                const id = path.split('/')[2];
-                if (options && options.method === 'DELETE') {
-                    dbStudents = dbStudents.filter(s => s._id !== id);
-                    return { ok: true, status: 200, data: { message: "Deleted" }, fallback: true };
-                }
             }
             return { ok: false, status: 500, data: { error: "Unknown simulation route." }, fallback: true };
         }
@@ -930,7 +828,7 @@
 
                     if (res.ok) {
                         if (res.fallback) {
-                            window.showToast('success', "Express server not running. Switched to simulated OTP. (Use Test OTP: 123456)");
+                            window.showToast('success', "Express server not running. Switched to simulated OTP. (Use test code: 123456)");
                         } else {
                             window.sendOTP('send-otp-btn');
                             window.showToast('success', `OTP initialized successfully! (Test OTP: ${res.data.simulatedOtp})`);
@@ -1053,7 +951,7 @@
         if (loginForm) {
             loginForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const email = document.getElementById('login-email').value.trim();
+                const email = document.getElementById('login-email').value;
                 const password = document.getElementById('login-password').value;
                 const btnText = document.getElementById('login-btn-text');
 
@@ -1073,12 +971,12 @@
                             window.showToast('success', `Welcome back, ${res.data.user.fullName}! Login successful.`);
                         }
 
-                        // Store logged-in user session
+                        // Store logged-in user session [2]
                         loggedInUser = res.data.user;
 
                         loginForm.reset();
                         
-                        // Transition animation from Auth view to Home View with GSAP
+                        // Transition animation from Auth view to Home View with GSAP [2]
                         showHomePage(loggedInUser);
                     } else {
                         window.showToast('error', res.data.error);
@@ -1091,35 +989,24 @@
             });
         }
 
-        // Transition from Auth Screen to school Dashboard home page using GSAP
+        // Transition from Auth Screen to school Dashboard home page using GSAP [2]
         function showHomePage(user) {
+            // 1. Get first letter of Full Name in uppercase [1]
             const rawName = user.fullName || "User";
             const firstLetter = rawName.trim().charAt(0).toUpperCase();
 
-            // Set profile avatar letters [1]
+            // 2. Set profile avatar letters [1]
             document.getElementById('nav-profile-letter').innerText = firstLetter;
             document.getElementById('drawer-profile-letter').innerText = firstLetter;
 
-            // Populate Profile Drawer Card details [1]
+            // 3. Populate Profile Drawer Card details [1]
             document.getElementById('profile-full-name').innerText = rawName;
             document.getElementById('profile-username').innerText = user.username || "@username";
             document.getElementById('profile-email').innerText = user.email || "email@address.com";
             document.getElementById('profile-mobile').innerText = user.mobile || "+917905647338";
             document.getElementById('welcome-user-name').innerText = rawName;
 
-            // Check if the user is the custom administrator (admin12@gmail.com) [2]
-            const adminTabButton = document.getElementById('nav-admin');
-            if (user.email === "admin12@gmail.com") {
-                adminTabButton.classList.remove('hidden'); // Reveal admin panel tab link [2]
-            } else {
-                adminTabButton.classList.add('hidden');
-            }
-
-            // Load teachers and students dynamically from database to feed landing UI [2]
-            loadDatabaseTeachers();
-            loadDatabaseStudents();
-
-            // GSAP Card Slide out to the top
+            // 4. GSAP Card Slide out to the top
             gsap.to("#shake-container", {
                 y: -120,
                 opacity: 0,
@@ -1136,7 +1023,7 @@
                     const homeView = document.getElementById('home-view');
                     homeView.classList.remove('hidden');
 
-                    // GSAP Slide in & scale down from 1.04 down to 1
+                    // GSAP Slide in & scale down from 1.05 down to 1
                     gsap.fromTo(homeView, 
                         { opacity: 0, scale: 1.04 }, 
                         { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }
@@ -1191,7 +1078,7 @@
                     const res = await safeFetch(`${API_URL}/send-otp`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ phoneNumber: phoneNumber + '_forgot' }) 
+                        body: JSON.stringify({ phoneNumber: phoneNumber + '_forgot' }) // unique simulated namespace
                     });
 
                     if (res.ok) {
@@ -1262,7 +1149,7 @@
         }
 
         // ----------------------------------------------------
-        // ११. MOBILE RESET PASSWORD (Submit New Password to Mongo)
+        // ११. MOBILE RESET PASSWORD (Final Password Update in MongoDB)
         // ----------------------------------------------------
         const forgotMobileForm = document.getElementById('forgot-mobile-form');
         if (forgotMobileForm) {
@@ -1304,205 +1191,6 @@
                 }
             });
         }
-
-        // ----------------------------------------------------
-        // १२. DYNAMIC DATABASE RENDERING (MongoDB -> Landing UI) [2]
-        // ----------------------------------------------------
-        // A. Teachers list fetch & render
-        async function loadDatabaseTeachers() {
-            const res = await safeFetch(`${API_URL}/teachers`);
-            if (res.ok) {
-                const teachers = res.data;
-                
-                // Update home statistics
-                const statTeachers = document.getElementById('stat-teachers-count');
-                if (statTeachers) statTeachers.innerText = teachers.length;
-
-                // Render in public directory section [2]
-                const grid = document.getElementById('teachers-public-grid');
-                if (grid) {
-                    grid.innerHTML = teachers.map(t => {
-                        // Render photo or initials avatar [2]
-                        const avatarHtml = t.photoUrl && t.photoUrl.startsWith('http') 
-                            ? `<img src="${t.photoUrl}" class="w-12 h-12 rounded-full object-cover border border-violet-500/20">`
-                            : `<div class="w-12 h-12 rounded-full bg-violet-600/10 text-violet-400 flex items-center justify-center font-bold text-lg border border-violet-500/20">${t.avatarLetter}</div>`;
-
-                        return `
-                            <div class="p-5 bg-[#121214] border border-neutral-800/80 rounded-2xl flex items-center gap-4 hover:border-violet-500/30 transition-colors duration-300">
-                                ${avatarHtml}
-                                <div>
-                                    <h4 class="text-sm font-semibold text-white">${t.name}</h4>
-                                    <p class="text-[10px] text-violet-400 font-medium">${t.subject}</p>
-                                    <p class="text-[9px] text-neutral-500 mt-1">${t.qualification}</p>
-                                </div>
-                            </div>
-                        `;
-                    }).join('');
-                }
-
-                // Render in admin control listing [2]
-                const adminList = document.getElementById('admin-teachers-list');
-                if (adminList) {
-                    adminList.innerHTML = teachers.map(t => `
-                        <div class="p-3 bg-[#18181b] border border-neutral-800 rounded-xl flex items-center justify-between text-xs">
-                            <div class="flex items-center gap-2">
-                                <span class="text-neutral-500 font-bold">${t.avatarLetter}</span>
-                                <div>
-                                    <p class="font-bold text-white">${t.name}</p>
-                                    <p class="text-[10px] text-neutral-400">${t.subject}</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-2">
-                                <button onclick="populateTeacherEditForm('${t._id}', '${t.name}', '${t.subject}', '${t.qualification}', '${t.photoUrl || ''}')" class="text-violet-400 hover:text-violet-300"><i class="ri-edit-line"></i></button>
-                                <button onclick="deleteTeacher('${t._id}')" class="text-rose-400 hover:text-rose-300"><i class="ri-delete-bin-line"></i></button>
-                            </div>
-                        </div>
-                    `).join('');
-                }
-            }
-        }
-
-        // B. Students list fetch & render
-        async function loadDatabaseStudents() {
-            const res = await safeFetch(`${API_URL}/students`);
-            if (res.ok) {
-                const students = res.data;
-
-                // Update home statistics
-                const statStudents = document.getElementById('stat-students-count');
-                if (statStudents) statStudents.innerText = students.length;
-
-                // Render in public metrics section [2]
-                const table = document.getElementById('students-public-table');
-                if (table) {
-                    table.innerHTML = students.map(s => {
-                        const statusColor = s.status === 'Active' ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400' : 'bg-amber-500/10 border-amber-500/20 text-amber-400';
-                        return `
-                            <tr class="hover:bg-neutral-900/30">
-                                <td class="py-3.5 px-5 font-semibold text-neutral-400">${s.regId}</td>
-                                <td class="py-3.5 px-5 font-bold text-white">${s.fullName}</td>
-                                <td class="py-3.5 px-5">${s.classSection}</td>
-                                <td class="py-3.5 px-5 font-medium">${s.rollNo}</td>
-                                <td class="py-3.5 px-5"><span class="px-2 py-0.5 border rounded-full text-[9px] font-semibold ${statusColor}">${s.status}</span></td>
-                            </tr>
-                        `;
-                    }).join('');
-                }
-
-                // Render in admin control listing [2]
-                const adminList = document.getElementById('admin-students-list');
-                if (adminList) {
-                    adminList.innerHTML = students.map(s => `
-                        <div class="p-3 bg-[#18181b] border border-neutral-800 rounded-xl flex items-center justify-between text-xs">
-                            <div>
-                                <p class="font-bold text-white">${s.fullName} <span class="text-[9px] text-neutral-500">(${s.regId})</span></p>
-                                <p class="text-[10px] text-neutral-400">${s.classSection}</p>
-                            </div>
-                            <button onclick="deleteStudent('${s._id}')" class="text-rose-400 hover:text-rose-300"><i class="ri-delete-bin-line text-sm"></i></button>
-                        </div>
-                    `).join('');
-                }
-            }
-        }
-
-        // ----------------------------------------------------
-        // १३. ADMIN CRUD INTERFACE HANDLERS [2]
-        // ----------------------------------------------------
-        // A. Teacher Creation/Editing Submit Trigger
-        async function handleTeacherFormSubmit(event) {
-            event.preventDefault();
-            const id = document.getElementById('admin-teacher-id').value;
-            const name = document.getElementById('admin-teacher-name').value;
-            const subject = document.getElementById('admin-teacher-subject').value;
-            const qualification = document.getElementById('admin-teacher-qual').value;
-            const photoUrl = document.getElementById('admin-teacher-photo').value;
-
-            const payload = { name, subject, qualification, photoUrl };
-            const isEdit = id ? true : false;
-            const url = isEdit ? `${API_URL}/teachers/${id}` : `${API_URL}/teachers`;
-            const method = isEdit ? 'PUT' : 'POST';
-
-            const res = await safeFetch(url, {
-                method,
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-
-            if (res.ok) {
-                window.showToast('success', isEdit ? "Teacher portfolio updated in MongoDB Atlas database!" : "New teacher enrolled successfully!");
-                resetTeacherForm();
-                loadDatabaseTeachers(); // Refresh views [2]
-            } else {
-                window.showToast('error', res.data.error);
-            }
-        }
-
-        // Populate form fields to Edit mode [2]
-        window.populateTeacherEditForm = function(id, name, subject, qual, photo) {
-            document.getElementById('admin-teacher-id').value = id;
-            document.getElementById('admin-teacher-name').value = name;
-            document.getElementById('admin-teacher-subject').value = subject;
-            document.getElementById('admin-teacher-qual').value = qual;
-            document.getElementById('admin-teacher-photo').value = photo;
-
-            document.getElementById('teacher-form-mode').innerText = "mode: Edit Existing";
-            document.getElementById('admin-teacher-submit-btn').innerText = "Update Teacher Portfolio";
-        };
-
-        // Reset Teacher form state back to Add mode
-        window.resetTeacherForm = function() {
-            document.getElementById('admin-teacher-id').value = "";
-            document.getElementById('admin-teacher-form').reset();
-            document.getElementById('teacher-form-mode').innerText = "mode: Add New";
-            document.getElementById('admin-teacher-submit-btn').innerText = "Save Teacher Portfolio";
-        };
-
-        // Delete Teacher Portfolio API trigger [2]
-        window.deleteTeacher = async function(id) {
-            if (!confirm("Are you sure you want to delete this teacher?")) return;
-            const res = await safeFetch(`${API_URL}/teachers/${id}`, { method: 'DELETE' });
-            if (res.ok) {
-                window.showToast('success', "Teacher portfolio removed from MongoDB database.");
-                loadDatabaseTeachers();
-            } else {
-                window.showToast('error', res.data.error);
-            }
-        };
-
-        // B. Student Enrollment Submit Trigger
-        async function handleStudentFormSubmit(event) {
-            event.preventDefault();
-            const regId = document.getElementById('admin-student-reg').value;
-            const rollNo = document.getElementById('admin-student-roll').value;
-            const fullName = document.getElementById('admin-student-name').value;
-            const classSection = document.getElementById('admin-student-class').value;
-
-            const res = await safeFetch(`${API_URL}/students`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ regId, rollNo, fullName, classSection, status: "Active" })
-            });
-
-            if (res.ok) {
-                window.showToast('success', "New student enrolled successfully in database!");
-                document.getElementById('admin-student-form').reset();
-                loadDatabaseStudents();
-            } else {
-                window.showToast('error', res.data.error);
-            }
-        }
-
-        // Delete Student Portfolio API trigger [2]
-        window.deleteStudent = async function(id) {
-            if (!confirm("Are you sure you want to de-enroll this student?")) return;
-            const res = await safeFetch(`${API_URL}/students/${id}`, { method: 'DELETE' });
-            if (res.ok) {
-                window.showToast('success', "Student record removed from MongoDB database.");
-                loadDatabaseStudents();
-            } else {
-                window.showToast('error', res.data.error);
-            }
-        };
     </script>
 
     <!-- General UI Layout & Animations Script -->
@@ -1580,7 +1268,6 @@
         }
 
         window.switchForgotToLogin = function() {
-            // Once slide-out to login is finished, we safely reset Forgot Form to Step 1
             slideTransition('forgot-form-wrapper', 'login-form-wrapper', 50, -50, window.resetForgotFormState);
         }
 
@@ -1647,6 +1334,7 @@
 
         // Tab Switching inside Home View
         window.switchHomeTab = function(tabName) {
+            // Get all sections and nav buttons
             const sections = document.querySelectorAll('.home-section');
             const navLinks = document.querySelectorAll('.nav-link');
             
@@ -1687,6 +1375,7 @@
 
         // Log out Workspace logic [2]
         window.handleUserLogout = function() {
+            // If profile drawer is open, close it
             const drawer = document.getElementById('profile-drawer');
             if (drawer && drawer.classList.contains('translate-x-0')) {
                 drawer.classList.add('-translate-x-full');
@@ -1784,7 +1473,6 @@
             onComplete: triggerImpactForce
         }, '-=2.0');
 
-        // Added clearProps: 'all' to guarantee visibility once animation resolves
         tl.from('.form-element', {
             y: 35,
             opacity: 0,
